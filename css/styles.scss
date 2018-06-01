@@ -1,0 +1,117 @@
+@import 'mediaqueries';
+@import 'colours';
+@import 'fonts';
+
+
+nav {
+	background-color: $primary;
+	padding-top: 30px;
+	border-bottom: solid 30px $secondary;
+	.col-md-12 {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+
+		@media(min-width: $screen-md) {
+			flex-flow: row;
+			align-items: flex-end;
+			justify-content: space-between;
+			text-align: left;
+		}
+	}
+}
+
+.wrapper {
+	padding: 0px;
+	
+	@media(min-width: $screen-md) {
+		padding: 50px 0px;
+	}
+	div {
+		align-self: flex-start;
+		&:first-child {
+			a {
+				display: block;
+				&:hover {
+					cursor: pointer;
+				}
+				+ a {
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+	.listado {
+		padding: 30px 0px;
+		a {
+			transition: all ease 0.5s;
+			padding: 15px 0px;
+			text-align: center;
+			&:hover {
+				background-color: $cta-secondary;
+			}
+		}
+	}
+	.calculator {
+		display: flex;
+		flex-flow: column;
+		padding-left: 0px;
+
+		@media(min-width: $screen-md) {
+			border-left: solid 1px $cta-secondary;
+			padding-left: 40px;
+		}
+		img {
+			max-width: 200px;
+			display:block;
+		}
+
+		div {
+			padding: 20px 0px;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			&:first-child {
+				padding: 30px 0px;
+			}
+			input {
+				text-align: right;
+				padding: 5px 10px;
+
+				&:focus {
+					outline: none;
+				}
+			}
+			+ div {
+				border-top: solid 1px $cta-secondary;
+			}
+		}
+		button {
+			border: none;
+			transition: all ease 0.5s;
+
+			&.submit {
+				background-color: $cta-primary;
+
+				&:hover {
+					background-color: $cta-primary-hover;
+				}
+			}
+			&:hover {
+				cursor: pointer;
+			}
+			&:focus, &:active {
+				outline: none;
+			}
+		}
+
+		.bg-danger {
+			opacity: 0;
+			transition: all ease 0.5s;
+			color: white;
+		}
+	}
+}

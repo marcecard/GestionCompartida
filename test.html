@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" type="text/css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        body{margin: 5px;}
+        p{color: blue; margin:3px;}
+    </style>
+</head>
+ 
+<body>
+    <div class="row-fluid">
+        <form class="form-horizontal">
+            <fieldset>
+                <!-- Form Name -->
+                <legend> My Form</legend>
+ 
+                <!-- Text input-->
+                <div class="control-group">
+                    <label class="control-label" for="textinput">Text Input</label>
+                    <div class="controls">
+                        <input id="textinput" name="textinput" type="text" placeholder="Start typing" class="input" onkeyup="getVals(this, 'text');">
+                        <p id="pTextInput"></p>
+                    </div>
+                </div>
+ 
+            </fieldset>
+        </form>
+    </div>
+ 
+    <script>
+        function getVals(formControl) {
+            var value = $(formControl).val();
+                $("#pTextInput").text(value);
+        }
+    </script>
+</body>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Gestión Compartida - Marcelo Cardoso</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+  </head>
+
+  <body ng-app="PlazoFijo">
+
+    <nav>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div>
+              <h1>Calculador Plazo Fijos</h1>
+            </div>
+            <div>
+              <span>Exámen técnico</span>
+              <h2>Marcelo Cardoso</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>    
+
+    <!-- Adding the ng-app declaration to initialize AngularJS -->
+    <div class="container" id="main">
+      <div class="row wrapper" ng-controller="Bancos">
+
+        <div class="col-md-3 listado">
+
+          <a ng-click="BBVA()">
+            BBVA Francés
+          </a>
+          <a ng-click="Santander()">
+            Santander Río
+          </a>
+          <a ng-click="Galicia()">
+            Galicia
+          </a>
+        </div>
+
+        <div class="col-md-9">
+
+          <div class="calculator">
+            
+            <div>
+              <h2>{{nombreBanco}}</h2>
+              <img src="img/{{imgBanco}}">
+            </div>
+
+            <div>
+              <p>Capital Inicial</p>
+              <input type="text" id="capitalInicial" value="">
+            </div>
+            <div>
+              <p>Interes Anual (TNA)</p>
+              <p><span id="getPercent">{{porcentaje}}</span>%</p>
+            </div>
+            <div>
+              <p>Duración en días</p>
+              <input type="text" id="duracion" value="">
+            </div>
+
+            <div>
+              <p class="bg-danger" id="dangerText">Seleccione una entidad bancaria e ingrese los datos</p>
+              <button class="submit" id="calcular" onclick="getVals()">Calcular</button>
+            </div>
+
+            <div>
+              <p>Interés obtenido</p>
+              <input type="text" id="interesInput" value="" disabled="">
+            </div>
+            <div>
+              <p>Capital Final</p>
+              <input type="text" id="capitalFinalInput" value="" disabled="">
+            </div>
+            <div>
+              <p>Porcentaje obtenido</p>
+              <input type="text" id="porcentajeInput" value="" disabled="">
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    
+    <!-- Include AngularJS from Google's CDN -->
+    <script src="https://code.angularjs.org/snapshot/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+  </body>
+
+</html>
